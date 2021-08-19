@@ -1,10 +1,6 @@
 **Advanced Software Development for Autonomous Mobile Robots**
 
 
-
-
-**Title:**
-
 The Repository contains package called final_project , which includes pick_place.py and the launch file named pick_place.launch.
 
 
