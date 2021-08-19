@@ -1,5 +1,5 @@
 # Advanced Software Development for Autonomous Mobile Robots
-# Final Project
+
 
 
 
@@ -7,7 +7,7 @@
 
 The Repository contains package called final_project , which includes pick_place.py and the launch file named pick_place.launch.
 
-please refer to wiki page: https://fbe-gitlab.hs-weingarten.de/stud-amr/2021-ss-master/sp-192149_tier4/-/wikis/home
+
 
 
 # Getting started:
