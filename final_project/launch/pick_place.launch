@@ -1,0 +1,4 @@
+<launch>
+    <node pkg = "final_project" name= "main_prj" type= "pick_place.py" output="screen"/>
+    
+</launch>

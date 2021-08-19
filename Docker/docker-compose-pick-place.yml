@@ -1,0 +1,45 @@
+version: '2.3'
+services:
+  tiago-pick-demo:
+    container_name: tiago-pick-demo
+    image: fbe-dockerreg.rwu.de/stud-amr/tiago_tutorials:melodic
+    environment:
+        ROS_IP: 127.0.0.1
+        ROS_HOSTNAME: 127.0.0.1
+        ROS_MASTER_URI: http://127.0.0.1:11311
+        WAIT_FOR_ROSCORE: 1
+        DISPLAY: $DISPLAY
+        QT_X11_NO_MITSHM: '1'
+        NVIDIA_VISIBLE_DEVICES: all
+        NVIDIA_DRIVER_CAPABILITIES: compute,video,utility,graphics
+    privileged: true
+    stdin_open: true
+    restart: 'unless-stopped'
+    network_mode: host
+    volumes:
+      - /tmp/.X11-unix:/tmp/.X11-unix
+      - $HOME/.Xauthority:/root/.Xauthority
+      - /home/sai/catkin_ws/src/sp-192149_tier3:/root/catkin_ws/src/sp-192149_tier3
+      - /home/sai/catkin_ws/src/sp-192149_tier4:/root/catkin_ws/src/sp-192149_tier4
+      - /home/sai/catkin_ws/src/sp-192149_tier4/final_project/launch/pick_demo.launch:/root/catkin_ws/src/tiago_tutorials/tiago_pick_demo/launch/pick_demo.launch
+    command: bash -c "apt install ros-melodic-ar-track-alvar-msgs; source /opt/ros/melodic/setup.bash; tail -f /dev/null"
+
+  qr-code-reader:
+    container_name: qr-code-reader
+    image: fbe-dockerreg.rwu.de/prj-iki-robotics/utils/code-reader-qr:master
+    environment:
+      ROS_IP: 127.0.0.1
+      ROS_HOSTNAME: 127.0.0.1
+      ROS_MASTER_URI: http://127.0.0.1:11311
+      WAIT_FOR_ROSCORE: 1
+    stdin_open: true
+    network_mode: host
+    restart: "unless-stopped"
+    tty: true
+    volumes:
+        - /tmp/.X11-unix:/tmp/.X11-unix
+        - $HOME/.Xauthority:/root/.Xauthority
+        - /home/sai/catkin_ws/src/sp-192149_tier4:/root/catkin_ws/src/sp-192149_tier4
+        - /home/sai/catkin_ws/src/sp-192149_tier3:/root/catkin_ws/src/sp-192149_tier3
+    command: roslaunch ar_track_alvar pr2_indiv_no_kinect.launch cam_info_topic:=/xtion/rgb/camera_info cam_image_topic:=/xtion/rgb/image_color output_frame:=map marker_size:=5.5 max_new_marker_error:=0.08 max_track_error:=0.02
+    
