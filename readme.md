@@ -1,28 +1,28 @@
-# Advanced Software Development for Autonomous Mobile Robots
+**Advanced Software Development for Autonomous Mobile Robots**
 
 
 
 
-# Title:
+**Title:**
 
 The Repository contains package called final_project , which includes pick_place.py and the launch file named pick_place.launch.
 
 
 
 
-# Getting started:
+**Getting started:**
 
 1. It is required to know the current position of robot, this can be obtained from /amcl_pose topic to localize the tiago robot in the given map. 
 2. To access the destination points(i.e.,position of alvar_markers), It is required to subscribe to /ar_pose_marker topic.
 3. Creating an action client that communicates with action server /move_base that uses a message MoveBaseAction.
 
 
-# General description:
+**General description:**
 
 The aim of this project is to navigate to the goal points,manipulate the end effector to pick the coke cans and place it in the bins present next to it.
 
 
-# Algorithm description:
+**Algorithm description:**
 
 
 1. To start with, all the goal points are appended in one list called goal_position.
@@ -33,7 +33,7 @@ The aim of this project is to navigate to the goal points,manipulate the end eff
 6. The same procedure is repeated for all the goal points.
 
 
-# Problems and solutions:
+**Problems and solutions:**
 
 1. During runtime gazebo environment would turn blank,to overcome this I shutdown all containers and restart it again.
 2. Sometimes built packages are not recognised in container so 'catkin build' should be done inside container.
@@ -42,12 +42,12 @@ The aim of this project is to navigate to the goal points,manipulate the end eff
 
 
 
-# Authors:
+**Authors:**
 
   Sai Prasanth Parnambedu,
   Vivek Harkhani
 
-# References:
+**References:**
  
  1. https://www.youtube.com/watch?v=9l5HxFF4PZc
  2. http://wiki.ros.org/move_base
