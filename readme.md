@@ -37,11 +37,7 @@ The aim of this project is to navigate to the goal points,manipulate the end eff
 
 
 
-
-**Authors:**
-
-  Sai Prasanth Parnambedu,
-  Vivek Harkhani
+  
 
 **References:**
  
