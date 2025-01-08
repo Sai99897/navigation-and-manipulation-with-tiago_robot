@@ -31,9 +31,9 @@ The aim of this project is to navigate to the goal points,manipulate the end eff
 
 **Problems and solutions:**
 
-1. During runtime gazebo environment would turn blank,to overcome this I shutdown all containers and restart it again.
-2. Sometimes built packages are not recognised in container so 'catkin build' should be done inside container.
-3. I couldn't able to perform manipulation task and I couldn't find the solution
+1. During runtime, the gazebo environment would turn blank, to overcome this I shut down all containers and restarted it again.
+2. Sometimes built packages are not recognised in container so 'catkin build' should be done inside the container.
+3. The manipulation problem couldn't be resolved optimally due to inconsistency in the detection of AR markers.
 
 
 
@@ -41,9 +41,8 @@ The aim of this project is to navigate to the goal points,manipulate the end eff
 
 **References:**
  
- 1. https://www.youtube.com/watch?v=9l5HxFF4PZc
- 2. http://wiki.ros.org/move_base
- 3. https://docs.ros.org/en/diamondback/api/actionlib/html/classactionlib_1_1simple__action__client_1_1SimpleActionClient.html
- 4. https://fbe-gitlab.hs-weingarten.de/stud-amr/2021-ss-master/vh-183378_tier4
+ 1. http://wiki.ros.org/move_base
+ 2. https://docs.ros.org/en/diamondback/api/actionlib/html/classactionlib_1_1simple__action__client_1_1SimpleActionClient.html
+ 3. https://fbe-gitlab.hs-weingarten.de/stud-amr/2021-ss-master/vh-183378_tier4
  
 
